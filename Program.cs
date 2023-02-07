@@ -61,6 +61,12 @@ class Program
                 Console.WriteLine();
                 Console.WriteLine($"Week of {startDate:MMM} {startDate:dd}, {startDate:yyyy}");
 
+                string[] hoursSlept = lineItems[1].Split('|');
+
+                for (int i = 0; i < hoursSlept.Length; i++) {
+                    Console.Write($"{hoursSlept[i]} ");
+                }
+
             }
             sr.Close();
         }
