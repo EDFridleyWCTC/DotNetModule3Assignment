@@ -56,10 +56,7 @@ class Program
                 string[] lineItems = fullLine.Split(',');
 
                 string[] dateItems = lineItems[0].Split('/');
-                int year = Convert.ToInt32(dateItems[2]);
-                int month = Convert.ToInt32(dateItems[0]);
-                int day = Convert.ToInt32(dateItems[1]);
-                DateTime startDate = new DateTime(year, month, day);
+                DateTime startDate = new DateTime(Convert.ToInt32(dateItems[2]), Convert.ToInt32(dateItems[0]), Convert.ToInt32(dateItems[1]));
 
                 Console.WriteLine();
                 Console.WriteLine($"Week of {startDate:MMM} {startDate:dd}, {startDate:yyyy}");
