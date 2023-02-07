@@ -64,8 +64,17 @@ class Program
                 string[] hoursSlept = lineItems[1].Split('|');
 
                 for (int i = 0; i < hoursSlept.Length; i++) {
-                    Console.Write($"{hoursSlept[i]} ");
+                    Console.Write($"{startDate.AddDays(i).ToString("ddd").Substring(0,2), 3}");
                 }
+                Console.WriteLine();
+                for (int i = 0; i < hoursSlept.Length; i++) {
+                    Console.Write($"{"--", 3}");
+                }
+                Console.WriteLine();
+                for (int i = 0; i < hoursSlept.Length; i++) {
+                    Console.Write($"{hoursSlept[i], 3}");
+                }
+                Console.WriteLine();
 
             }
             sr.Close();
