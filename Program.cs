@@ -48,7 +48,24 @@ class Program
         }
         else if (resp == "2")
         {
-            // TODO: parse data file
+            StreamReader sr = new StreamReader("data.txt");
+
+            while (!sr.EndOfStream)
+            {
+                string fullLine = sr.ReadLine();
+                string[] lineItems = fullLine.Split(',');
+
+                string[] dateItems = lineItems[0].Split('/');
+                int year = Convert.ToInt32(dateItems[2]);
+                int month = Convert.ToInt32(dateItems[0]);
+                int day = Convert.ToInt32(dateItems[1]);
+                DateTime startDate = new DateTime(year, month, day);
+
+                Console.WriteLine();
+                Console.WriteLine($"Week of {startDate:MMM} {startDate:dd}, {startDate:yyyy}");
+
+            }
+            sr.Close();
         }
     }
 }
